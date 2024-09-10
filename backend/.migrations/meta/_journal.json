@@ -8,6 +8,13 @@
       "when": 1725978737689,
       "tag": "0000_spicy_thunderbird",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1725979172551,
+      "tag": "0001_loud_scarecrow",
+      "breakpoints": true
     }
   ]
 }
