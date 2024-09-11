@@ -1,7 +1,7 @@
 import { db } from '@/db'
 import { goals } from '@/db/schema'
 
-interface CreateGoalRequest {
+type CreateGoalRequest = {
   title: string
   desiredWeekFrequency: number
 }
