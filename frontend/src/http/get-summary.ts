@@ -3,7 +3,7 @@ type GoalsPerDay = Record<
   {
     id: string
     title: string
-    createdAt: Date
+    completedAt: Date
   }[]
 >
 
