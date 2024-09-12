@@ -50,6 +50,7 @@ export async function createGoalCompletion({
     .from(goals)
     .leftJoin(goalCompletedCounts, eq(goalCompletedCounts.goalId, goals.id))
     .where(eq(goals.id, goalId))
+    .limit(1)
 
   const { desiredWeekFrequency, completionCount } = resultGoalCompletion[0]
 
