@@ -1,13 +1,22 @@
 import { Dialog } from './components/ui/dialog'
-// import { EmptyGoal } from './components/empty-goal'
+import { EmptyGoal } from './components/empty-goal'
 import { CreateGoal } from './components/create-goal'
 import { Summary } from './components/summary'
+import { useQuery } from '@tanstack/react-query'
+import { gertSummary } from './http/get-summary'
 
 export function App() {
+  const { data } = useQuery({
+    queryKey: ['summary'],
+    queryFn: gertSummary,
+  })
+  console.log(data)
+
   return (
     <Dialog>
       {/* <EmptyGoal /> */}
-      <Summary />
+      {(data && data.total > 0 && <Summary />) || <EmptyGoal />}
+      {/* <Summary /> */}
       <CreateGoal />
     </Dialog>
   )
